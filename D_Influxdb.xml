@@ -7,10 +7,10 @@
   <device>
     <deviceType>urn:schemas-influxdata-com:device:influxdb:1</deviceType>
 	<staticJson>D_Influxdb.json</staticJson>
-    <friendlyName>Influxdb data logger</friendlyName>
+    <friendlyName>InfluxDB Data Logger</friendlyName>
     <manufacturer>Julius</manufacturer>
     <manufacturerURL>https://github.com/JuliusOnGitHub/</manufacturerURL>
-    <modelDescription>Influxdb data logger for Vera</modelDescription>
+    <modelDescription>InfluxDB data logger for Vera</modelDescription>
     <modelName>InfluxDB</modelName>
     <modelNumber>1.0</modelNumber>
 	<protocol>cr</protocol>

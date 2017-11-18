@@ -1,5 +1,25 @@
 {
-    "default_icon": "Generic_IO.png",
+    "flashicon":"plugins.png",
+    "imgIconBody":"",
+    "imgIconDimmable":"",
+    "imgIconTurnable":"",
+    "imgIconMin":"",
+    "imgIconMax":"",
+    "halloIconsDir":"pics\/hallo",
+    "x":"3",
+    "y":"5",
+    "inScene":"1",
+    "state_icons":[
+
+    ],
+    "doc_url":{
+      "doc_language":1,
+      "doc_manual":1,
+      "doc_version":1,
+      "doc_platform":0,
+      "doc_page":"devices"
+    },
+    "ToggleButton":1,
     "Tabs": [
         {
             "Label": {
@@ -130,6 +150,55 @@
                             {
                                 "Name": "newInfluxDbDatabase",
                                 "ID": "newInfluxDbDatabase"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "ControlType": "label",
+                    "Label": {
+                        "lang_tag": "device_settings_page",
+                        "text": "Devices to log (csv):"
+                    },
+                    "Display": {
+                        "Top": 80,
+                        "Left": 50,
+                        "Width": 150,
+                        "Height": 20
+                    }
+                },
+                {
+                    "ControlType": "input",
+                    "ID": "newInfluxDbDevicesToLog",
+                    "Display": {
+                        "Service": "urn:upnp-influxdata-com:serviceId:InfluxDB1",
+                        "Variable": "InfluxDbDevicesToLog",
+                        "Top": 80,
+                        "Left": 170,
+                        "Width": 340,
+                        "Height": 20,
+						"ID": "newInfluxDbDevicesToLog"
+                    }
+                },
+                {
+                    "ControlType": "button",
+                    "Label": {
+                        "lang_tag": "setLabel",
+                        "text": "Set"
+                    },
+                    "Display": {
+                        "Top": 80,
+                        "Left": 520,
+                        "Width": 100,
+                        "Height": 20
+                    },
+                    "Command": {
+                        "Service": "urn:upnp-influxdata-com:serviceId:InfluxDB1",
+                        "Action": "SetInfluxDbDevicesToLog",
+                        "Parameters": [
+                            {
+                                "Name": "newInfluxDbDevicesToLog",
+                                "ID": "newInfluxDbDevicesToLog"
                             }
                         ]
                     }

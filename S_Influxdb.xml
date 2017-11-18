@@ -39,5 +39,15 @@
         </argument>
       </argumentList>
     </action>
+    <action>
+      <name>SetInfluxDbDevicesToLog</name>
+      <argumentList>
+        <argument>
+          <name>newInfluxDbDevicesToLog</name>
+          <direction>in</direction>
+		  <relatedStateVariable>InfluxDbDevicesToLog</relatedStateVariable>
+        </argument>
+      </argumentList>
+    </action>
   </actionList>
 </scpd>

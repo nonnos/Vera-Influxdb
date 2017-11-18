@@ -19,6 +19,7 @@ local TASK_BUSY = 1
 local INFLUXDB_SID = "urn:upnp-influxdata-com:serviceId:InfluxDB1"
 local INFLUXDBURL = "InfluxDbUrl";
 local INFLUXDBDATABASE = "InfluxDbDatabase";
+local INFLUXDBDEVICESTOLOG = "InfluxDbDevicesToLog";
 
 local CALLBACK = "watchVariable"
 
@@ -62,7 +63,7 @@ function initstatus(lul_device)
 	luup.io.intercept()
 
 	for deviceNo,d in pairs(luup.devices) do
-		if d.id ~= "" then
+		if d.id ~= "" and shouldDeviceBeWatched(deviceNo) then
 			if d.category_num == 2 then
 				variable_watch("urn:upnp-org:serviceId:Dimming1", "LoadLevelStatus", deviceNo)
 			elseif d.category_num == 3 then
@@ -102,6 +103,51 @@ function initstatus(lul_device)
 	writeData(getWriteUrl(), "InfluxDBPlugin.StartPing value=1")
 
 	return true
+end
+
+function shouldDeviceBeWatched(deviceNo)
+	local returnValue = false
+	local devicesToLogString = get_variable(INFLUXDBDEVICESTOLOG, InfluxDB_device, "")
+
+	if devicesToLogString ~= "" then
+		devicesToLogTable = splitString(devicesToLogString, ",")
+		if valueInTable(devicesToLogTable, tostring(deviceNo)) then
+			returnValue = true
+		end
+	end
+	
+	return returnValue
+end
+
+function splitString(inputString, separator)
+	local returnTable={}
+	local index = 1
+	
+	if separator == nil then
+		separator = "%s"
+	end
+	for tmpString in string.gmatch(inputString, "([^"..separator.."]+)") do
+		returnTable[index] = string.gsub(tmpString, "%s+", "") -- Remove eventual spaces
+		index = index + 1
+	end
+
+	if index == 1 then
+		returnTable[index] = inputString
+	end
+
+	return returnTable
+end
+
+function valueInTable(table, value)
+	local returnValue = false
+	
+	for index, currentValue in ipairs(table) do
+		if currentValue == value then
+			returnValue = true
+		end
+	end
+
+	return returnValue
 end
 
 function writeData(writeUrl, lineProtocol)

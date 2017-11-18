@@ -19,5 +19,13 @@
 		luup.variable_set("urn:upnp-influxdata-com:serviceId:InfluxDB1","InfluxDbDatabase", lul_settings.newInfluxDbDatabase, lul_device)
 	  </run>
     </action>
+    <action>
+      <serviceId>urn:upnp-influxdata-com:serviceId:InfluxDB1</serviceId>
+      <name>SetInfluxDbDevicesToLog</name>
+      <run>
+		luup.log("InfluxDB: Set variable InfluxDbDevicesToLog " .. lul_settings.newInfluxDbDevicesToLog .. " for " .. lul_device .. ".")
+		luup.variable_set("urn:upnp-influxdata-com:serviceId:InfluxDB1","InfluxDbDevicesToLog", lul_settings.newInfluxDbDevicesToLog, lul_device)
+	  </run>
+    </action>
   </actionList>  
 </implementation>

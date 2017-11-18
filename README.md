@@ -1,4 +1,4 @@
-# Vera Influxdb logger
+# Vera InfluxDB Logger
 
 Sends data to an InfluxDB database from a Vera z-wave controller. 
 
@@ -9,7 +9,7 @@ Install instructions (UI7):
 	* Description: InfluxDB data logger
 	* Upnp Device Filename: D_Influxdb.xml
 	* Upnp Implementation Filename": I_Influxdb.xml
-	* Optionally select a Room for this
+	* Optionally select a Room for this device
 * Reload Luup Engine under: "Settings -> Z-Wave Settings -> Advanced -> Reload Engine (GO)
 * Configure settings under: "Devices -> InfluxDB Data Logger -> Settings"
 	* Influxdb url: http://<ip/adress>:<port>

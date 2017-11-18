@@ -84,6 +84,8 @@ function initstatus(lul_device)
 				variable_watch("urn:micasaverde-com:serviceId:DoorLock1", "Target", deviceNo)
 				variable_watch("urn:micasaverde-com:serviceId:DoorLock1", "Status", deviceNo)
 				variable_watch("urn:micasaverde-com:serviceId:HaDevice1", "BatteryLevel", deviceNo)
+			elseif d.category_num == 12 then
+				variable_watch("urn:micasaverde-com:serviceId:GenericSensor1", "CurrentLevel", deviceNo)
 			elseif d.category_num == 16 then
 				variable_watch("urn:micasaverde-com:serviceId:HumiditySensor1", "CurrentLevel", deviceNo)
 				variable_watch("urn:micasaverde-com:serviceId:HaDevice1", "BatteryLevel", deviceNo)

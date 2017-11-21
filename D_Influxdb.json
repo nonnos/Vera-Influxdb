@@ -1,11 +1,5 @@
 {
-    "flashicon":"plugins.png",
-    "imgIconBody":"",
-    "imgIconDimmable":"",
-    "imgIconTurnable":"",
-    "imgIconMin":"",
-    "imgIconMax":"",
-    "halloIconsDir":"pics\/hallo",
+    "default_icon":"zwave_default.png",
     "x":"3",
     "y":"5",
     "inScene":"1",

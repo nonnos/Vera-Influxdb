@@ -6,9 +6,9 @@ Install instructions (UI7):
 * Uppload D_Influxdb.json, D_Influxdb.xml, I_Influxdb.xml, L_Influxdb.lua and S_Influxdb.xml under: "Apps -> Develop apps -> Luup files"
 * Create a device under: "Apps -> Develop apps -> Create device"
 	* Device type: urn:schemas-influxdata-com:device:influxdb:1
-	* Description: InfluxDB data logger
+	* Description: InfluxDB Data Logger
 	* Upnp Device Filename: D_Influxdb.xml
-	* Upnp Implementation Filename": I_Influxdb.xml
+	* Upnp Implementation Filename: I_Influxdb.xml
 	* Optionally select a Room for this device
 * Reload Luup Engine under: "Settings -> Z-Wave Settings -> Advanced -> Reload Engine (GO)
 * Configure settings under: "Devices -> InfluxDB Data Logger -> Settings"

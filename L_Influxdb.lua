@@ -95,9 +95,8 @@ function initstatus(lul_device)
 			elseif d.category_num == 18 then
 				variable_watch("urn:micasaverde-com:serviceId:LightSensor1", "CurrentLevel", deviceNo)
 				variable_watch("urn:micasaverde-com:serviceId:HaDevice1", "BatteryLevel", deviceNo)
-			elseif d.category_num == 18 then
+			elseif d.category_num == 21 then
 				variable_watch("urn:micasaverde-com:serviceId:EnergyMetering1", "Watts", deviceNo)
-				variable_watch("urn:micasaverde-com:serviceId:EnergyMetering1", "KWH", deviceNo)
 			end
 		end
 	end

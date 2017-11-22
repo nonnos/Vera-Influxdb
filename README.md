@@ -12,7 +12,7 @@ Install instructions (UI7):
 	* Optionally select a Room for this device
 * Reload Luup Engine under: "Settings -> Z-Wave Settings -> Advanced -> Reload Engine (GO)
 * Configure settings under: "Devices -> InfluxDB Data Logger -> Settings"
-	* Influxdb url: http://'<ip/adress>':'<port>'
-	* Influxdb database: '<db name>'
-	* Devices to log (csv): '<id1, id2, ...>'
+	* Influxdb url: http://\<ip/adress>:\<port>
+	* Influxdb database: \<db name>
+	* Devices to log (csv): \<id1, id2, ...>
 * Reload Luup Engine again under: "Settings -> Z-Wave Settings -> Advanced -> Reload Engine (GO)
